@@ -11,10 +11,16 @@ IceblockRunner::IceblockRunner(Service* service){
 }
 
 void IceblockRunner::start(){
-	if(isShowMessage){
+	if (isShowMessage) {
 		cout << Message::SHOW_NOW_STATUS_MESSAGE << endl;
 	}
 	field.show();
+
+	if (isShowMessage) {
+		cout << Message::SHOW_SELECT_MOVE_BLOCK_MESSAGE << endl;
+	}
+
+	cout << service -> getMoveBlockId() << endl;
 }
 
 void IceblockRunner::setMessageEnable(){

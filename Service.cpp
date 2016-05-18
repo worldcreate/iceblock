@@ -1,4 +1,4 @@
 #include "Service.h"
 
-int Service::getBlockId(){
+int Service::getMoveBlockId(){
 }

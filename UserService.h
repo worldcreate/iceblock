@@ -7,7 +7,7 @@ class UserService : public Service {
 private:
 
 public:
-	virtual int getBlockId();
+	virtual int getMoveBlockId();
 };
 
 #endif

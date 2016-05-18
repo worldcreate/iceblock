@@ -1,5 +1,5 @@
 #include "UserService.h"
 
-int UserService::getBlockId(){
+int UserService::getMoveBlockId(){
 	return 0;
 }

@@ -1,26 +1,23 @@
-CC = g++
-CFLAGS = -O2 
-LDFLAGS =
-INCLUDES = 
-LIBS =
-DEBUG =
-TARGET = main
-SRC=$(wildcard *.cpp) 
-OBJS = $(SRC:.cpp=.o)
-.SUFFIXES:	.cpp
-# 生成規則 
-all: $(TARGET)
-
-debug:
-	make $(TARGET) DEBUG='-g -DDEBUG' CFLAGS='-O0'
-
-$(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) $(DEBUG) -o $@ $(OBJS) $(LIBS) 
-
-run:
-	./$(TARGET)
-
-clean:
-	rm -f $(TARGET) $(OBJS) .nfs* *~ *.core *.stackdump \#* core 
-.cpp.o:
-	$(CC) $(CFLAGS) $(DEBUG) $(INCLUDES) -c $< 
+TARGET=a.out  
+NOMAKEDIR=
+SRCS=$(shell find * -name "*.cpp")  
+OBJS=$(patsubst %.cpp, %.o, $(SRCS))  
+INCLUDE=$(addprefix -I./,$(filter-out $(NOMAKEDIR), $(shell find * -type d)))  
+CXX=g++  
+  
+all: $(TARGET)  
+	  
+$(TARGET): $(OBJS)  
+	 $(CXX) -o $@ $(OBJS)  
+	   
+%.o : %.cpp  
+	 $(CXX) $(INCLUDE) -c -o $@ $<  
+	   
+depend:  
+	 makedepend -Y -- $(INCLUDE) -- $(SRCS)  
+	   
+clean:  
+	 rm -f $(TARGET) $(OBJS)  
+	   
+remake:  
+	 make clean && make 

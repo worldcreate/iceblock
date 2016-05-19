@@ -6,6 +6,7 @@ private:
 
 public:
 	virtual int getMoveBlockId();
+	virtual int getMoveDirection();
 };
 
 #endif

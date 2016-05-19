@@ -21,6 +21,7 @@ void IceblockRunner::start(){
 	}
 
 	cout << service -> getMoveBlockId() << endl;
+	cout << service -> getMoveDirection() << endl;
 }
 
 void IceblockRunner::setMessageEnable(){

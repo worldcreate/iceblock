@@ -3,6 +3,7 @@
 
 #include "Block.h"
 #include "Cells.h"
+#include "Direct.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ private:
 public:
 	Field();
 	void show();
-	void moveBlock(int ,int );
+	void moveBlock(int ,Direct );
 	~Field();
 };
 

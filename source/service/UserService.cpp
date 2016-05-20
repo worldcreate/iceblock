@@ -4,6 +4,7 @@ int UserService::getMoveBlockId(){
 	return 0;
 }
 
-int UserService::getMoveDirection() {
-	return 0;
+Direct UserService::getMoveDirection() {
+	Direct direct = Direct::LEFT;
+	return direct;
 }

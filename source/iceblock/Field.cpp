@@ -28,8 +28,12 @@ void Field::show(){
 	}
 }
 
-void Field::moveBlock(int blockId, int direct){
+void Field::moveBlock(int blockId, Direct direct){
 	Point p = cells->searchBlock(blockId);
+
+	cout << "p.getX() = " << p.getX() << endl;
+	cout << "p.getY() = " << p.getY() << endl;
+	cout << "Direct = " << direct.getName() << endl;
 }
 
 Field::~Field(){

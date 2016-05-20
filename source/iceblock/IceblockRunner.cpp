@@ -1,7 +1,9 @@
 #include "IceblockRunner.h"
 #include "Message.h"
 #include "Block.h"
+#include "StringUtils.h"
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -20,8 +22,21 @@ void IceblockRunner::start(){
 		cout << Message::SHOW_SELECT_MOVE_BLOCK_MESSAGE << endl;
 	}
 
-	cout << service -> getMoveBlockId() << endl;
-	cout << service -> getMoveDirection() << endl;
+	int blockId = service -> getMoveBlockId();
+
+	if (isShowMessage) {
+		cout << Message::SHOW_SELECT_MOVE_DIRECT_MESSAGE << endl;
+		cout << 
+			StringUtils::replace(Message::SHOW_DIRECT_INDEX_MESSAGE,
+				StringUtils::convertIntToString(Direct::LEFT.getId()).c_str(), Direct::LEFT.getName(),
+				StringUtils::convertIntToString(Direct::RIGHT.getId()).c_str(), Direct::RIGHT.getName(),
+				StringUtils::convertIntToString(Direct::UP.getId()).c_str(), Direct::UP.getName(),
+				StringUtils::convertIntToString(Direct::DOWN.getId()).c_str(), Direct::DOWN.getName())
+			<< endl;
+	}
+	Direct moveDirection = service -> getMoveDirection();
+
+	field.moveBlock(blockId,moveDirection);
 }
 
 void IceblockRunner::setMessageEnable(){

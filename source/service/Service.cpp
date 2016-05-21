@@ -2,4 +2,4 @@
 
 int Service::getMoveBlockId(){}
 
-Direct Service::getMoveDirection(){}
+int Service::getMoveDirection(){}

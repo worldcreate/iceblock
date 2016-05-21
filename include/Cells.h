@@ -3,6 +3,7 @@
 
 #include "FieldType.h"
 #include "Cell.h"
+#include "FileReader.h"
 
 #include <vector>
 
@@ -12,8 +13,8 @@ class Cells{
 private:
 	vector<vector<Cell*> > cells;
 public:
-	Cells(int,int);
-	Cell* getCell(int ,int );
+	Cells(int, int, FileReader&);
+	Cell* getCell(int, int);
 	Point searchBlock(int);
 	~Cells();
 };

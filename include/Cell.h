@@ -4,29 +4,20 @@
 #include "FieldType.h"
 #include "Block.h"
 
+#define NULL 0
+
 class Cell{
 private:
 	FieldType fieldType;
 	Block* block;
 public:
-	Cell(){
-		block = 0;
-	};
-	Block* getBlock(){
-		return block;
-	};
-	void setBlock(Block* b){
-		block = b;
-	};
-	FieldType getFieldType(){
-		return fieldType;
-	};
-	void setFieldType(FieldType fieldtype){
-		fieldType = fieldtype;
-	};
-	~Cell(){
-		delete block;
-	}
+	Cell();
+	Cell(FieldType fieldType);
+	Block* getBlock();
+	void setBlock(Block* b);
+	FieldType getFieldType();
+	void setFieldType(FieldType fieldtype);
+	~Cell();
 };
 
 #endif

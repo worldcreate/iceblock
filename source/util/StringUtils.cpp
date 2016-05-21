@@ -46,3 +46,19 @@ string StringUtils::convertIntToString(int num) {
 
 	return ss.str();
 }
+
+int StringUtils::convertStringToInt(string str) {
+	istringstream iss(str);
+
+	int num;
+	iss >> num;
+	return num;
+}
+
+vector<string> StringUtils::split(const string &line, char delim) {
+	istringstream iss(line);
+	string tmp;
+	vector<string> res;
+	while(getline(iss, tmp, delim)) res.push_back(tmp);
+	return res;
+}

@@ -8,7 +8,7 @@ private:
 
 public:
 	virtual int getMoveBlockId();
-	virtual Direct getMoveDirection();
+	virtual int getMoveDirection();
 };
 
 #endif

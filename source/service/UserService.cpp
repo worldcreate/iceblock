@@ -1,10 +1,23 @@
 #include "UserService.h"
+#include "InputReader.h"
+#include "StringUtils.h"
+
+#include <string>
+#include <sstream>
+#include <vector>
+
+using namespace std;
 
 int UserService::getMoveBlockId(){
-	return 0;
+	string line = InputReader::readLine();
+	int num = StringUtils::convertStringToInt(line);
+
+	return num;
 }
 
-Direct UserService::getMoveDirection() {
-	Direct direct = Direct::LEFT;
-	return direct;
+int UserService::getMoveDirection() {
+	string line = InputReader::readLine();
+	int num = StringUtils::convertStringToInt(line);
+
+	return num;
 }

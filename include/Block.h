@@ -8,7 +8,11 @@ private:
 	int id;
 	Point point;
 public:
-	Block(){};
+	Block(){
+		id = count;
+		count++;
+	};
+
 	void setId(int id){
 		this->id = id;
 	}
@@ -21,6 +25,7 @@ public:
 	Point getPoint(){
 		return this->point;
 	}
+	static int count;
 };
 
 #endif

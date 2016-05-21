@@ -9,6 +9,7 @@ private:
 	Service *service;
 	Field field;
 	bool isShowMessage;
+	int moveCount;
 public:
 	IceblockRunner(Service* service);
 	void setMessageEnable();
